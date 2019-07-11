@@ -4,12 +4,13 @@ const User = mongoose.model('User');
 
 
 exports.register = async(req, res) => {
+    console.log(req.body);
     findUser = await User.find({email: req.body.email}).count();
     if(findUser == 0){
         user = await (new User(req.body)).save()
         return res.json('saved to the database');
     }
-    return res.status(400).json({
+    return res.json({
         error: ["This adress email is already used"]
       })
 }
