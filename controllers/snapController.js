@@ -4,9 +4,8 @@ const uuid = require('uuid');
 
 
 exports.send = async (req, res) => {
-    req.body.photo = uuid.v1();
     const snap = await (new Snap(req.body)).save();
-    return res.json(req.body.photo)
+    return res.json('OK');
 }
 
 exports.getSnapById = async (req, res) => {

@@ -11,8 +11,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.json({limit: '50mb'}));
+app.use(bodyparser.urlencoded({extended: true, limit: '50mb'}));
 
 app.use(session({
     secret: "secret",
