@@ -16,7 +16,7 @@ API routes:
 
             GET "/all" return all the user in the database
 
-            POST "/snap" body: from, to, photo(a url), duration(number)
+            POST "/snap" body: from, to, photo(a base64 string), duration(number)
             put a snap in the database, all the body is required.
 
             GET "/snap/${email}" body: email,
